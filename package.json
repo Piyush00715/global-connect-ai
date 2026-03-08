@@ -1,0 +1,13 @@
+{
+  "name": "global-connect",
+  "version": "1.0.0",
+  "description": "Real-time multilingual web chat application",
+  "scripts": {
+    "postinstall": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "npx concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "author": "",
+  "license": "ISC"
+}

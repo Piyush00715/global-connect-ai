@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id              String   @id @default(uuid())
+  senderId        String
+  originalText    String
+  translatedText  String?
+  senderLanguage  String
+  targetLanguage  String
+  clarification   String?
+  timestamp       DateTime @default(now())
+}
+
+model UserConnection {
+  socketId String @id
+  userId   String
+  language String
+}
